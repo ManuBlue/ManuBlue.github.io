@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *{
+        scroll-behavior: smooth;
+      }  
+
+      @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+      :root {
+        --yellow-color: #fcee09;
+        --red-color: #ff003c;
+        --black-color: #050a0e;
+        --blue-color: #00f0ff;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      p {
+        color: ffb00;
+      }
+
+      .btn {
+        width: 230px;
+        height: 45px;
+        border: 0;
+        outline: none;
+        background-color: var(--black-color);
+        cursor: pointer;
+        position: relative;
+        font-family: Tomorrow, sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: white;
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
+
+      .btn:hover {
+        background-color: var(--black-color);
+        color: black;
+      }
+
+      .btn__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: var(--black-color);
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
+
+      .btn__content:hover {
+        background-color: var(--yellow-color);
+      }
+
+      .dropdowncontainer {
+        display: none;
+      }
+
+      .top {
+        display: flex;
+        height: 6px;
+        margin-top: -0.25rem;
+        background-color: #fffb00;
+        z-index: 2;
+        margin-left: 0.05rem;
+      }
+
+      .one {
+        display: flex;
+      }
+
+      .navbar {
+        display: flex;
+        width: fit-content;
+        gap: 4px;
+      }
+
+      .option {
+        display: flex;
+        flex-direction: row;
+        background-color: #212121;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .lol {
+        color: #fcee09;
+        font-weight: bolder;
+      }
+
+      .button {
+        align-items: center;
+        text-align: left;
+        width: 220px;
+        color: white;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        width: 230px;
+        z-index: 2;
+      }
+
+      .drocon {
+        width: fit-content;
+      }
+
+      .drocon:hover .dropdowncontainer {
+        display: flex;
+        z-index: 2;
+      }
+
+      .button:hover {
+        color: #fcee09;
+      }
+
+      .dropdowncontainer:active .btn__content {
+        background-color: var(--yellow-color);
+      }
+      @font-face {
+        font-family: "tomorrow";
+        src: url("./Tomorrow-Regular.ttf");
+      }
+    </style>
+  </head>
+
+  <body
+    class="relative overflow-x-hidden py-0"
+    style="background-image:url('./peakpx.jpeg'); background-size: cover;"
+    id="body"
+  >
+  <button
+      class="absolute z-40 left-10 top-1 gap-2 flex items-center"
+      id="myBtn"
+    >
+      <i class="bx bx-sun text-4xl" id="darktext" ></i>
+      <div class="font-bold" style="font-family: 'Tomorrow'" id="darktext2">
+        CHANGE THEME
+      </div>
+    </button>
+    <script>
+      document
+        .getElementById("myBtn")
+        .addEventListener("click", toggleBackground);
+
+      function toggleBackground() {
+        var currentBackground =
+          document.getElementById("body").style.backgroundImage;
+
+        if (currentBackground.includes("peakpxblack.jpeg")) {
+          document.getElementById("body").style.backgroundImage = "url('./peakpx.jpeg')";
+          document.getElementById("darktext").style.color = "black";
+          document.getElementById("darktext2").style.color = "black";
+          let x = document.getElementById("darktext3");
+          x.style.webkitFilter = "grayscale(0) invert(0)";
+          x.style.filter = "grayscale(0) invert(0)";
+          document.getElementById("darktext4").style.color = "black";
+          document.getElementById("darktext5").style.color = "black";
+        } else {
+          document.getElementById("body").style.backgroundImage = "url('./peakpxblack.jpeg')";
+          document.getElementById("darktext").style.color = "white";
+          document.getElementById("darktext2").style.color = "white";
+          let x = document.getElementById("darktext3");
+          x.style.webkitFilter = "grayscale(1) invert(1)";
+          x.style.filter = "grayscale(1) invert(1)";
+          document.getElementById("darktext4").style.color = "white";
+          document.getElementById("darktext5").style.color = "white";
+        }
+      }
+    </script>
+  <img
+  src="./HpBar.png"
+  class="hidden lg:flex lg:absolute lg:scale-50 lg:top-9 lg:left-10"
+  alt=""
+  id="darktext3"
+/>
+    <img src="./graffity-1-c975cf02.png" class="absolute" alt="">
+    <div class="scale-[0.45] w-full p-1 lg:scale-100">
+      <div class="navbar absolute mx-auto drop-shadow-lg lg:right-2">
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >Games▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./games.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>TRENDING</a
+                >
+              </div>
+              <div class="option">
+                <a
+                  href="./esportgames.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>ESPORTS</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >SHOWS▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a href="./elive.html" class="button" style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>E-LIVE</a
+                >
+              </div>
+              <div class="option">
+                <a href="./elive.html" class="button" style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>MORE</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >COMMUNITY▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./forums.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>FORUMS</a
+                >
+              </div>
+              <div class="option">
+                <a href="/profile.html#updates" class="button" style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>UPDATES</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >MORE▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a href="./merch.html" class="button" style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>MERCHANDISE</a
+                >
+              </div>
+              <div class="option">
+                <a href="./profile.html" class="button" style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>PROFILE</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-black p-2 my-20" id="darktext4">
+      <div class="text-xl text-center lg:text-4xl lg:text-center" style="font-family: 'Tomorrow'">
+        CURRENT <span class="text-[#ff003c] text-2xl lg:text-[#ff003c] lg:text-6xl">TOP</span> STREAM.
+      </div>
+      <p class="text-base mx-auto text-center lg:mx-auto lg:text-2xl lg:text-center" style="font-family: 'Tomorrow'">
+        SUPPORT YOUR <span class="text-[#ff003c] text-2xl lg:text-[#ff003c] lg:text-2xl">FAVOURITE</span> CREATORS.
+      </p>
+    </div>
+    <div class="w-11/12 mx-auto h-full -mt-9">
+      <div class="flex flex-col gap-1">
+        <div class="h-full w-full">
+          <iframe
+            class="vid w-full h-[500px]"
+            src="https://www.youtube.com/embed/Wr0nn2obbvw?autoplay=1&mute=1"
+          ></iframe>
+        </div>
+        <div class="scale-100 lg:scale-100 lg:text-2xl lg:flex lg:items-center lg:font-semibold lg:justify-between" style="font-family: 'Tomorrow';">
+            CONTRIBUTION:
+            <div class="scale-75 lg:scale-100 lg:flex lg:gap-x-7 lg:my-5">
+                <button class="btn">
+                    <span class="btn__content bg-[#ff003c]" style="font-family: 'Tomorrow'"
+                      >10$</span>
+                <button class="btn">
+                <span class="btn__content bg-[#ff003c]" style="font-family: 'Tomorrow'"
+                    >20$</span>
+                <button class="btn">
+                    <span class="btn__content bg-[#ff003c]" style="font-family: 'Tomorrow'"
+                    >30$</span>
+                <button class="btn">
+                    <span class="btn__content bg-[#ff003c]" style="font-family: 'Tomorrow'"
+                    >40$</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

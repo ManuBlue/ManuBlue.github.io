@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Games</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <style>
+          @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+    
+          :root {
+            --yellow-color: #fcee09;
+            --red-color: #ff003c;
+            --black-color: #050a0e;
+            --blue-color: #00f0ff;
+          }
+    
+          a {
+            text-decoration: none;
+            color: white;
+          }
+    
+          p {
+            color: ffb00;
+          }
+    
+          .btn {
+            width: 230px;
+            height: 45px;
+            border: 0;
+            outline: none;
+            background-color: var(--black-color);
+            cursor: pointer;
+            position: relative;
+            font-family: Tomorrow, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: white;
+            clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+          }
+    
+          .btn:hover {
+            background-color: var(--black-color);
+            color: black;
+          }
+    
+          .btn__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background-color: var(--black-color);
+            clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+          }
+    
+          .btn__content:hover {
+            background-color: var(--yellow-color);
+          }
+    
+          .dropdowncontainer {
+            display: none;
+          }
+    
+          .top {
+            display: flex;
+            height: 6px;
+            margin-top: -0.25rem;
+            background-color: #fffb00;
+            z-index: 2;
+            margin-left: 0.05rem;
+          }
+    
+          .one {
+            display: flex;
+          }
+    
+          .navbar {
+            display: flex;
+            width: fit-content;
+            gap: 4px;
+          }
+    
+          .option {
+            display: flex;
+            flex-direction: row;
+            background-color: #212121;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+    
+          .lol {
+            color: #fcee09;
+            font-weight: bolder;
+          }
+    
+          .button {
+            align-items: center;
+            text-align: left;
+            width: 220px;
+            color: white;
+          }
+    
+          .options {
+            display: flex;
+            flex-direction: column;
+            width: 230px;
+            z-index: 2;
+          }
+    
+          .drocon {
+            width: fit-content;
+          }
+    
+          .drocon:hover .dropdowncontainer {
+            display: flex;
+            z-index: 2;
+          }
+    
+          .button:hover {
+            color: #fcee09;
+          }
+    
+          .dropdowncontainer:active .btn__content {
+            background-color: var(--yellow-color);
+          }
+          @font-face {
+            font-family: "tomorrow";
+            src: url("./Tomorrow-Regular.ttf");
+          }
+        </style>
+      </head>
+<body style="font-family: 'Tomorrow'">
+  
+<div class="bg-[url('./bg-4f43a272.jpg')] bg-cover relative overflow-hidden py-0" >
+  
+  <div class="scale-[0.5] w-full md:scale-100">
+    <div class="navbar absolute mx-auto md: mt-2 drop-shadow-lg md:right-2">
+    <div class="drocon">
+      <button class="btn">
+        <span class="btn__content" style="font-family: 'Tomorrow'"
+          >Games▼</span
+        >
+      </button>
+      <div class="dropdowncontainer">
+        <div class="options">
+          <div class="top"></div>
+          <div class="option">
+            <a href="./games.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>TRENDING</a
+            >
+          </div>
+          <div class="option">
+            <a href="./esportgames.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>ESPORTS</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drocon">
+      <button class="btn">
+        <span class="btn__content" style="font-family: 'Tomorrow'"
+          >SHOWS▼</span
+        >
+      </button>
+      <div class="dropdowncontainer">
+        <div class="options">
+          <div class="top"></div>
+          <div class="option">
+            <a href="./elive.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>E-LIVE</a
+            >
+          </div>
+          <div class="option">
+            <a href="./elive.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>MORE</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drocon">
+      <button class="btn">
+        <span class="btn__content" style="font-family: 'Tomorrow'"
+          >COMMUNITY▼</span
+        >
+      </button>
+      <div class="dropdowncontainer">
+        <div class="options">
+          <div class="top"></div>
+          <div class="option">
+            <a href="./forums.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>FORUMS</a
+            >
+          </div>
+          <div class="option">
+            <a href="#updates" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>UPDATES</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drocon">
+      <button class="btn">
+        <span class="btn__content" style="font-family: 'Tomorrow'"
+          >MORE▼</span
+        >
+      </button>
+      <div class="dropdowncontainer">
+        <div class="options">
+          <div class="top"></div>
+          <div class="option">
+            <a href="./merch.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>MERCHANDISE</a
+            >
+          </div>
+          <div class="option">
+            <a href="./profile.html" class="button" style="font-family: 'Tomorrow'"
+              ><span class="lol">— </span>PROFILE</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="./graffity-1-c975cf02.png" class="absolute -z-1"  alt="">
+</div>
+<div class="flex flex-col mt-20 items-left">
+    <div class="ml-4 flex text-6xl text-black font-semibold gap-x-2">WELCOME<span class="text-6xl text-[#ff003c]">BACK</span>,</div>
+    <div class="ml-4 flex text-7xl text-[#ff003c] font-semibold gap-x-2 bg-black px-3 py-2 w-fit">USERNAME</div>
+</div>
+<div class="flex bg-[url('./hero.png')] bg-cover bg-no-repeat -mt-2 -ml-10">
+    <div class="flex items-center h-[380px] w-[1280px] translate-x-[600px] translate-y-16">
+        <button class="btn bg-[#fffb00]">
+            <span class="btn__content bg-[#ff003c] font-semibold" style="font-family: 'Tomorrow'"
+              >YOUR ORDERS
+            </span>
+        <button class="btn bg-[#fffb00]">
+            <span class="btn__content bg-[#ff003c] font-semibold" style="font-family: 'Tomorrow'"
+                >MY CART
+            </span>
+        <button class="btn bg-[#fffb00]">
+            <span class="btn__content bg-[#ff003c] font-semibold" style="font-family: 'Tomorrow'"
+                >EDIT PROFILE
+            </span>
+        <button class="btn bg-[#fffb00]">
+            <span class="btn__content bg-[#ff003c] font-semibold" style="font-family: 'Tomorrow'"
+                >SUBMIT REPORT
+            </span>
+    </div>
+</div>
+</div>
+<section class="bg-black py-56 " id="updates">
+  <div class="mx-auto  w-11/12 text-center ">
+    <div class="flex flex-col gap-1 justify-center">
+      <div class="text-white text-6xl text-center font-bold mb-5">NEW UPDATES</div>
+      <div class="text-[#fffb00] font-bold text-4xl text-center">
+        ELDEN RING - PATCH NOTES - VERSION 1.10
+      </div>
+      <div class="text-white">
+        Increased poise damage of all weapons and some spells and incantations. <br> Increased critical hit damage. <br> VISIT <span class="text-[#ff003c] text-xl">ELDENRING.COM</span> FOR MORE INFO
+      </div>
+      <br> <br>
+      <div class="text-[#fffb00] font-bold text-4xl text-center">
+        AC VALHALLA UPDATE 1.7.0 - RELEASE NOTES
+      </div>
+      <div class="text-white">
+        The Captain at Katzenelnbogen isn't counted when the kill is confirmed. <br> Previously purchased items are missing from player inventory. <br> VISIT <span class="text-[#ff003c] text-xl">ASSASSINSCREED.COM</span> FOR MORE INFO
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[url(./bg-4f43a272.jpg)] py-20 relative overflow-hidden">
+  <img src="./razor-bottom-black-4930e500.svg" class="absolute top-0">
+  <img src="./graffity-2-92e2195a.png" class="absolute z-40 right-0 -bottom-16" alt="">
+  <img src="./graffity-1-c975cf02.png" class="absolute z-40 " alt="">
+  <div class="w-11/12 mx-auto">
+     <div class="text-center font-bold  text-4xl my-3">FAQ</div>
+    
+    <div class=" flex flex-col gap-10 w-6/12 mx-auto text-2xl">
+      <div class="text-left font-semibold ">
+        
+        -> Can I get a refund on my purchases? <br>
+           A. All orders are eligible for a refund for the first 30 days.
+      </div>
+      <div class="text-left font-semibold ">
+        
+        -> Where can I contact cyberpark? <br>
+        A. Contact us at joemama@gmail.com
+      </div>
+      <div class="text-left font-semibold ">
+        
+        -> Can I place cash on delivery? <br>
+        A. Depends on the seller of the product.
+      </div>
+      <div class="text-left font-semibold ">
+        
+        -> How to cancel orders? <br>
+        A. Orders can be cancelled through the my cart tab.
+      </div> 
+     
+    </div>
+  </div>
+</section>
+<img src="./razor-bottom-black-4930e500.svg" class="absolute rotate-180 -mt-4">
+<footer class="bg-black py-11">
+<div class="flex justify-between w-11/12 mx-auto">
+  <div class="socials flex gap-3 items-center">
+    <div class="text-xl text-slate-400">
+      FIND US ON
+    </div>
+    <div class="flex gap-3">
+      <img src="./discord-25f7b34a.svg" class="cursor-pointer"><img src="./facebook-607a7626.svg"class="cursor-pointer"><img src="./instagram-d70b2cd7.svg"class="cursor-pointer"><img src="./tumblr-0afcfa1b.svg" class="cursor-pointer"><img src="./twitch-e28d5215.svg" class="cursor-pointer"><img src="./twitter-964d7e53.svg"class="cursor-pointer"><img src="./youtube-cb066cae.svg"class="cursor-pointer"><img src="./forums-ea984cf4.svg" class="cursor-pointer">
+
+    </div>
+  </div>
+<div class="flex gap-3">
+  <img src="./rating-esrb@2x-a80e5005.png" alt="" class="w-[170px] h-[80px]">
+<img src="./nvidia-5a0ab065.svg" alt="">
+<img src="./alienware-3d98dd93.svg" alt="">
+<img src="./amd-a823d277.svg" alt="">
+</div>
+</div>
+<div class=" text-white w-8/12 mx-auto text-center my-3 mt-4 ">© 2024 CD PROJEKT S.A. All rights reserved. CD PROJEKT, the CD PROJEKT logo, Cyberpunk, Cyberpunk 2077 and the Cyberpunk 2077 logo are trademarks and/or registered trademarks of CD PROJEKT S.A. in the US and/or other countries.
+</div>
+</footer>
+</body>
+</html>

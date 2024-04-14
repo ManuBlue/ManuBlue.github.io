@@ -1,92 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
-<style> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
-  .my-img{
-  background-image: url(andrewtate.jpg);
-  background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  }
-  .my-text{
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: aliceblue;
-  font-family: 'Courier New', Courier, monospace;
-  font-size:xx-large;
-  }
-  table, th, td {
-  border: 3px solid black;
-  border-radius: 10px;
-  font-size: xx-large; 
-  color: black; 
-  font-family: 'Courier New', Courier, monospace;
-  border-collapse: collapse;
-  background-color: white;
-  font-stretch: condensed;
-a:link {
-  color: #cccccc;
-  background-color: transparent;
-  text-decoration: none;
-  
-}
+      :root {
+        --yellow-color: #fcee09;
+        --red-color: #ff003c;
+        --black-color: #050a0e;
+        --blue-color: #00f0ff;
+      }
 
-a:visited {
-  color:#cccccc;
-  background-color: transparent;
-  text-decoration: none;
-}
+      a {
+        text-decoration: none;
+        color: white;
+      }
 
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: none;
-}
+      p {
+        color: ffb00;
+      }
 
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: none;
-}
-}
-  </style>
- <table style="width: 100%;">
-  <th><a href="https://i.kym-cdn.com/entries/icons/original/000/042/708/gayandrewtate.jpg" target="_blank">Escape matrix</a></th>
-  <th><a href="https://knowyourmeme.com/memes/gorlock-the-destroyer" target="_blank">Single moms in ur area</a></th>
-  <th><a href="https://photos.app.goo.gl/MEq7eK5UowXFMTom7" target="_blank">Black mail material</a></th>
-  <th><a href="ecesoc.jpeg" target="_blank">ECE Society</a></th>
-  <th><a href="https://youtu.be/dQw4w9WgXcQ?feature=shared" target="_blank">Funny memes</a></th>
-  <th><a href="bkn.jpg" target="_blank">BKN Secret stash</a></th>
-</table>
-</head>
-<body style="background-color: black;">
-<div class="my-img" >
-<div class="my-text">
-  <h2>Instead of getting angry </h2>
-  <h3>How about you get some bi*ches</h3>
-  <p style="font-stretch: expanded;font-size:medium;">Learn how to escape the matrix today</p>
-  <p>Click<a href="https://knowyourmeme.com/memes/subcultures/emergence-metamorphosis-177013" target="_blank" style="text-decoration: none;">here</a>to find out more</p>
-</div>  
-</div>
+      .btn {
+        width: 230px;
+        height: 45px;
+        border: 0;
+        outline: none;
+        background-color: var(--black-color);
+        cursor: pointer;
+        position: relative;
+        font-family: Tomorrow, sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: white;
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
 
+      .btn:hover {
+        background-color: var(--black-color);
+        color: black;
+      }
 
-</body>
-<footer>
-<h1 style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 10;">For more info contact us at : </h3>
-  <br>
-<p style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-stretch: extra-expanded;font-size: large;"> &#128187; joemama@gmail.com</p>
-<p style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 10;font-size: large;"> &#128222; 42069177013</p>
-<p style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 10;font-size: large;"> &#128241; @pedoluver</p>
+      .btn__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: var(--black-color);
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
 
-</footer>
+      .btn__content:hover {
+        background-color: var(--yellow-color);
+      }
 
+      .dropdowncontainer {
+        display: none;
+      }
+
+      .top {
+        display: flex;
+        height: 6px;
+        margin-top: -0.25rem;
+        background-color: #fffb00;
+        z-index: 2;
+        margin-left: 0.05rem;
+      }
+
+      .one {
+        display: flex;
+      }
+
+      .navbar {
+        display: flex;
+        width: fit-content;
+        gap: 4px;
+      }
+
+      .option {
+        display: flex;
+        flex-direction: row;
+        background-color: #212121;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .lol {
+        color: #fcee09;
+        font-weight: bolder;
+      }
+
+      .button {
+        align-items: center;
+        text-align: left;
+        width: 220px;
+        color: white;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        width: 230px;
+        z-index: 2;
+      }
+
+      .drocon {
+        width: fit-content;
+      }
+
+      .drocon:hover .dropdowncontainer {
+        display: flex;
+        z-index: 2;
+      }
+
+      .button:hover {
+        color: #fcee09;
+      }
+
+      .dropdowncontainer:active .btn__content {
+        background-color: var(--yellow-color);
+      }
+      @font-face {
+        font-family: "tomorrow";
+        src: url("./Tomorrow-Regular.ttf");
+      }
+    </style>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </head>
+  <body >
+    <div
+      class="relative overflow-hidden"
+      style="background-image:url('./cover-1920-bd460362.jpg') ; background-size: cover;" id="body"
+    >
+      <div class="scale-[0.4] w-full md:scale-100">
+        <div
+          class="navbar absolute md:mx-auto drop-shadow-lg md:left-2 my-4 z-50"
+        >
+          <div class="drocon">
+            <button class="btn">
+              <span class="btn__content" style="font-family: 'Tomorrow'"
+                >Games▼</span
+              >
+            </button>
+            <div class="dropdowncontainer">
+              <div class="options">
+                <div class="top"></div>
+                <div class="option">
+                  <a
+                    href="./games.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>TRENDING</a
+                  >
+                </div>
+                <div class="option">
+                  <a
+                    href="./esportgames.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>ESPORTS</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="drocon">
+            <button class="btn">
+              <span class="btn__content" style="font-family: 'Tomorrow'"
+                >SHOWS▼</span
+              >
+            </button>
+            <div class="dropdowncontainer">
+              <div class="options">
+                <div class="top"></div>
+                <div class="option">
+                  <a
+                    href="./elive.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>E-LIVE</a
+                  >
+                </div>
+                <div class="option">
+                  <a
+                    href="./elive.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>MORE</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="drocon">
+            <button class="btn">
+              <span class="btn__content" style="font-family: 'Tomorrow'"
+                >COMMUNITY▼</span
+              >
+            </button>
+            <div class="dropdowncontainer">
+              <div class="options">
+                <div class="top"></div>
+                <div class="option">
+                  <a
+                    href="./forums.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>FORUMS</a
+                  >
+                </div>
+                <div class="option">
+                  <a
+                    href="./profile.html#updates"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>UPDATES</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="drocon">
+            <button class="btn">
+              <span class="btn__content" style="font-family: 'Tomorrow'"
+                >MORE▼</span
+              >
+            </button>
+            <div class="dropdowncontainer">
+              <div class="options">
+                <div class="top"></div>
+                <div class="option">
+                  <a
+                    href="./merch.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>MERCHANDISE</a
+                  >
+                </div>
+                <div class="option">
+                  <a
+                    href="./profile.html"
+                    class="button"
+                    style="font-family: 'Tomorrow'"
+                    ><span class="lol">— </span>PROFILE</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <img src="./graffity-1-c975cf02.png" class="absolute -z-50" alt="" /> -->
+      <img src="./streak.png" class="bottom-0 absolute right-0 z-0" alt="" />
+      <img src="./streak.png" class="bottom-0 absolute left-0 z-0" alt="" />
+
+      <!-- <img
+        src="./ezgif.com-webp-to-jpg-converter.jpg "
+        class="absolute -z-30 right-0 bottom-[87px] scale-125"
+      /> -->
+
+      <img
+        src="./HpBar.png"
+        class="md:block hidden md:absolute md:scale-50 md:top-[150px]"
+        alt=""
+        style="-webkit-filter: grayscale(0) invert(0); filter: grayscale(0) invert(0);"
+        id="darktext3"
+
+      />
+      <div class="over">
+        <img
+          src="./icon_futristic.png"
+          class="icon absolute z-50 opacity-15 h-34 w-34 top-[400px] left-[350px]"
+          alt=""
+        />
+      </div>
+
+      <button class="absolute z-40  left-10 top-32 gap-2 flex items-center" id="myBtn" >
+        <i class='bx bx-sun text-4xl ' id="darktext2"></i>
+        <div class="font-bold" style="font-family: 'Tomorrow';" id="darktext4">CHANGE THEME</div>
+      </button>
+      <script>
+        document.getElementById("myBtn").addEventListener("click", toggleBackground);
+        
+        function toggleBackground() {
+          var currentBackground = document.getElementById("body").style.backgroundImage;
+          
+          if (currentBackground.includes("darkcover.jpg")) {
+            document.getElementById("body").style.backgroundImage = "url('./cover-1920-bd460362.jpg')";
+            document.getElementById("darktext").style.color = 'black';
+            document.getElementById("darktext2").style.color = 'black';
+            let x = document.getElementById("darktext3");
+            x.style.webkitFilter = "grayscale(0) invert(0)";
+            x.style.filter = "grayscale(0) invert(0)";
+            document.getElementById("darktext4").style.color = 'black';
+          } else {
+            document.getElementById("body").style.backgroundImage = "url('./darkcover.jpg')";
+            document.getElementById("darktext").style.color = 'white';
+            document.getElementById("darktext2").style.color = 'white';
+            let x = document.getElementById("darktext3");
+            x.style.webkitFilter = "grayscale(1) invert(1)";
+            x.style.filter = "grayscale(1) invert(1)";
+            document.getElementById("darktext4").style.color = 'white';
+          }
+        }
+        </script>
+      <style>
+        .icon {
+          animation: rota 30s linear infinite;
+        }
+
+        @keyframes rota {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          50% {
+            transform: rotate(180deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+      <div class="w-[1080px] mx-auto h-full">
+        <div class="flex h-[100vh] w-full items-center">
+          <div class="textplusbtn flex flex-col gap-y-5 items-start w-7/12">
+            <div class="font-tomorrow text-6xl" style="font-family: 'Tomorrow'" id="darktext">
+              GAMERS UNITE HERE. <br />ARE U THE
+              <span class="text-[#ff003c]">ONE?</span>
+            </div>
+            <button class="btn">
+              <span class="btn__content" href="./profile.html"><a href="./profile.html">JOIN THE FUTURE_</a></span>
+              <span class="btn__glitch"></span>
+              <span class="btn__label">r25</span>
+            </button>
+
+            <style>
+              .btn__glitch {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #ff003c;
+                filter: drop-shadow(-2px 3px #67e3f3)
+                  drop-shadow(-1px -3px #02d8f3) drop-shadow(2px 1px #02d8f3);
+              }
+
+              .btn--secondary .btn__glitch {
+                background-color: #ff003c;
+              }
+
+              .btn:hover .btn__glitch,
+              .btn:hover .btn__content::after,
+              .btn:focus .btn__glitch,
+              .btn:focus .btn__content::after {
+                display: block;
+                animation: glitch-animation 2s linear 0s infinite;
+              }
+              @keyframes glitch-animation {
+                0% {
+                  opacity: 1;
+                  transform: translateZ(0);
+                  clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+                }
+
+                2% {
+                  clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+                  transform: translate(-5px);
+                }
+
+                6% {
+                  clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+                  transform: translate(5px);
+                }
+
+                8% {
+                  clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+                  transform: translate(-5px);
+                }
+
+                9% {
+                  clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+                  transform: translate(0);
+                }
+
+                10% {
+                  clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                13% {
+                  clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+                  transform: translateZ(0);
+                }
+
+                13.1% {
+                  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                15% {
+                  clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                20% {
+                  clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+                  transform: translate3d(-5px, 0, 0);
+                }
+
+                20.1% {
+                  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                25% {
+                  clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                30% {
+                  clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+                  transform: translate3d(-5px, 0, 0);
+                }
+
+                30.1% {
+                  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                }
+
+                35% {
+                  clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+                  transform: translate(-5px);
+                }
+
+                40% {
+                  clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+                  transform: translate(5px);
+                }
+
+                45% {
+                  clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+                  transform: translate(-5px);
+                }
+
+                50% {
+                  clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+                  transform: translate(0);
+                }
+
+                55% {
+                  clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+                  transform: translate3d(5px, 0, 0);
+                }
+
+                60% {
+                  clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+                  transform: translateZ(0);
+                  opacity: 1;
+                }
+
+                60.1% {
+                  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                  opacity: 1;
+                }
+
+                to {
+                  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                  opacity: 1;
+                }
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
-

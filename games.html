@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+      :root {
+        --yellow-color: #fcee09;
+        --red-color: #ff003c;
+        --black-color: #050a0e;
+        --blue-color: #00f0ff;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      p {
+        color: ffb00;
+      }
+
+      .btn {
+        width: 230px;
+        height: 45px;
+        border: 0;
+        outline: none;
+        background-color: var(--black-color);
+        cursor: pointer;
+        position: relative;
+        font-family: Tomorrow, sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: white;
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
+
+      .btn:hover {
+        background-color: var(--black-color);
+        color: black;
+      }
+
+      .btn__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: var(--black-color);
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+      }
+
+      .btn__content:hover {
+        background-color: var(--yellow-color);
+      }
+
+      .dropdowncontainer {
+        display: none;
+      }
+
+      .top {
+        display: flex;
+        height: 6px;
+        margin-top: -0.25rem;
+        background-color: #fffb00;
+        z-index: 2;
+        margin-left: 0.05rem;
+      }
+
+      .one {
+        display: flex;
+      }
+
+      .navbar {
+        display: flex;
+        width: fit-content;
+        gap: 4px;
+      }
+
+      .option {
+        display: flex;
+        flex-direction: row;
+        background-color: #212121;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .lol {
+        color: #fcee09;
+        font-weight: bolder;
+      }
+
+      .button {
+        align-items: center;
+        text-align: left;
+        width: 220px;
+        color: white;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        width: 230px;
+        z-index: 2;
+      }
+
+      .drocon {
+        width: fit-content;
+      }
+
+      .drocon:hover .dropdowncontainer {
+        display: flex;
+        z-index: 2;
+      }
+
+      .button:hover {
+        color: #fcee09;
+      }
+
+      .dropdowncontainer:active .btn__content {
+        background-color: var(--yellow-color);
+      }
+      @font-face {
+        font-family: "tomorrow";
+        src: url("./Tomorrow-Regular.ttf");
+      }
+    </style>
+  </head>
+
+  <body
+    class="relative overflow-x-hidden py-0"
+    id="body"
+    style="background-image:url('./peakpx.jpeg'); background-size: cover;"
+  >
+    <button
+      class="absolute z-40 left-10 top-0 -mt-16 gap-2 flex items-center"
+      id="myBtn"
+    >
+      <i class="bx bx-sun text-4xl" id="darktext2"></i>
+      <div class="font-bold" style="font-family: 'Tomorrow'" id="darktext4">
+        CHANGE THEME
+      </div>
+    </button>
+    <script>
+      document
+        .getElementById("myBtn")
+        .addEventListener("click", toggleBackground);
+
+      function toggleBackground() {
+        var currentBackground =
+          document.getElementById("body").style.backgroundImage;
+
+        if (currentBackground.includes("peakpxblack.jpeg")) {
+          document.getElementById("body").style.backgroundImage = "url('./peakpx.jpeg')";
+          document.getElementById("darktext").style.color = "black";
+          document.getElementById("darktext2").style.color = "black";
+          let x = document.getElementById("darktext3");
+          x.style.webkitFilter = "grayscale(0) invert(0)";
+          x.style.filter = "grayscale(0) invert(0)";
+          document.getElementById("darktext4").style.color = "black";
+          document.getElementById("darktext5").style.color = "black";
+        } else {
+          document.getElementById("body").style.backgroundImage = "url('./peakpxblack.jpeg')";
+          document.getElementById("darktext").style.color = "white";
+          document.getElementById("darktext2").style.color = "white";
+          let x = document.getElementById("darktext3");
+          x.style.webkitFilter = "grayscale(1) invert(1)";
+          x.style.filter = "grayscale(1) invert(1)";
+          document.getElementById("darktext4").style.color = "white";
+          document.getElementById("darktext5").style.color = "white";
+        }
+      }
+    </script>
+    <img
+      src="./HpBar.png"
+      class="lg:block hidden absolute scale-50 top-0 left-10"
+      alt=""
+      id="darktext3"
+    />
+    <div class="scale-[0.4] w-full md:scale-100">
+      <div class="navbar absolute mx-auto -my-16 drop-shadow-lg md:right-2">
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >Games▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./games.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>TRENDING</a
+                >
+              </div>
+              <div class="option">
+                <a
+                  href="./esportgames.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>ESPORTS</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >SHOWS▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./elive.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>E-LIVE</a
+                >
+              </div>
+              <div class="option">
+                <a
+                  href="./elive.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>MORE</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >COMMUNITY▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./forums.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>FORUMS</a
+                >
+              </div>
+              <div class="option">
+                <a
+                  href="./profile.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>UPDATES</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drocon">
+          <button class="btn">
+            <span class="btn__content" style="font-family: 'Tomorrow'"
+              >MORE▼</span
+            >
+          </button>
+          <div class="dropdowncontainer">
+            <div class="options">
+              <div class="top"></div>
+              <div class="option">
+                <a
+                  href="./merch.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>MERCHANDISE</a
+                >
+              </div>
+              <div class="option">
+                <a
+                  href="./profile.html"
+                  class="button"
+                  style="font-family: 'Tomorrow'"
+                  ><span class="lol">— </span>PROFILE</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-black p-2 my-20">
+      <div
+        class="text-2xl text-center md:text-4xl md:text-center"
+        style="font-family: 'Tomorrow'" id="darktext"
+      >
+        BRING OUT THE
+        <span class="text-[#ff003c] text-4xl md:text-[#ff003c] md:text-6xl"
+          >GAMER</span
+        >
+        INSIDE YOU.
+      </div>
+      <p
+        class="mx-auto text-xl text-center md:mx-auto md:text-2xl md:text-center"  id="darktext5"  >
+        EXPLORE OUR EXPANSIVE AND DIVERSE LIBRARY TO PURCHASE GAMES THAT CATER
+        TO
+        <span class="text-[#ff003c] text-2xl md:text-[#ff003c] md:text-2xl"
+          >EVERY</span
+        >
+        TASTE AND PREFERNCE.
+      </p>
+    </div>
+    <div class="mx-auto px-3">
+      <div class="md:flex gap-4 my-5">
+        <div class="hidden md:w-6/12 bg-black md:flex md:flex-col">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Ugb80d5lxEM?autoplay=1&mute=1"
+          >
+          </iframe>
+          <div
+            class="text-white font-bold my-3 align-middle text-center"
+            style="font-family: 'Tomorrow'"
+          >
+            BUY CYBERPUNK NOW AT ONLY
+            <span class="text-green-500 text-2xl">5$</span>
+          </div>
+        </div>
+        <div
+          class="flex flex-col mx-auto md:grid grid-cols-2 grid-rows-2 gap-y-2 gap-x-4 w-6/12"
+        >
+          <div>
+            <img src="./game1.jpg" alt="" />
+            <div
+              class="w-full h-[50px] bg-black flex p-2 justify-between items-center"
+            >
+              <div class="text-white font-bold" style="font-family: 'Poppins'">
+                Price : <s class="text-[#ff003c]">75$</s>
+                <span class="text-green-500 text-2xl">5$</span>
+              </div>
+              <a href="./games/cyberpunk.html"
+                ><div
+                  class="bg-[#fffb00] px-4 py-2 text-black font-bold"
+                  style="font-family: 'Tomorrow'"
+                >
+                  MORE INFO
+                </div></a
+              >
+            </div>
+          </div>
+          <div>
+            <img src="./game2.jpg" alt="" />
+            <div
+              class="w-full h-[50px] bg-black flex p-2 justify-between items-center"
+              style="font-family: 'Poppins'"
+            >
+              <div class="text-white font-bold">
+                Price : <s class="text-[#ff003c]">75$</s>
+                <span class="text-green-500 text-2xl">5$</span>
+              </div>
+              <a href="./games/quantumbreak.html"
+                ><div class="bg-[#fffb00] px-4 py-2 text-black font-bold">
+                  MORE INFO
+                </div></a
+              >
+            </div>
+          </div>
+          <div style="font-family: 'Poppins'">
+            <img src="./game3.jpg" alt="" />
+            <div
+              class="w-full h-[50px] bg-black flex p-2 justify-between items-center"
+            >
+              <div class="text-white font-bold">
+                Price : <s class="text-[#ff003c]">75$</s>
+                <span class="text-green-500 text-2xl">5$</span>
+              </div>
+              <a href="./games/gtav.html"
+                ><div class="bg-[#fffb00] px-4 py-2 text-black font-bold">
+                  MORE INFO
+                </div></a
+              >
+            </div>
+          </div>
+          <div style="font-family: 'Poppins'">
+            <img src="./game4.jpg" alt="" />
+            <div
+              class="w-full h-[50px] bg-black flex p-2 justify-between items-center"
+            >
+              <div class="text-white font-bold">
+                Price : <s class="text-[#ff003c]">75$</s>
+                <span class="text-green-500 text-2xl">5$</span>
+              </div>
+              <a href="./games/eldenring.html"
+                ><div class="bg-[#fffb00] px-4 py-2 text-black font-bold">
+                  MORE INFO
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
