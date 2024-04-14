@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+:root {
+  --yellow-color: #fcee09; 
+  --red-color: #ff003c;
+  --black-color: #050a0e;
+  --blue-color: #00f0ff;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p{
+    color: ffb00;
+}
+
+
+.btn {
+  width: 230px;
+  height: 45px; 
+  border: 0;
+  outline: none;
+  background-color: var(--black-color);
+  cursor: pointer;
+  position: relative;
+  font-family: Tomorrow, sans-serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+  color: white;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+
+.btn:hover{
+    background-color: var(--black-color);
+    color: black;
+}
+
+.btn__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: var(--black-color);
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+
+.btn__content:hover{
+    background-color: var(--yellow-color);
+}
+
+.dropdowncontainer{
+    display:none;
+}
+
+.top{
+    display: flex;
+    height: 6px;
+    margin-top: -0.25rem;
+    background-color: #fffb00;
+    z-index: 2;
+    margin-left: 0.05rem;
+}
+
+.one{
+    display: flex;
+}
+
+.navbar{
+    display:flex;
+    width: fit-content;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    background-color: #404447;
+    padding-top: 1rem;
+    padding-bottom: 1rem;    
+}
+
+.lol{
+    color: #fcee09;
+    font-weight: bolder;
+}
+
+.button{
+    align-items: center;
+    text-align: left;
+    width: 220px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    z-index: 2;
+}
+
+.drocon{
+    width: fit-content;
+}
+
+.drocon:hover .dropdowncontainer{
+    display: flex;
+    z-index: 2;
+}

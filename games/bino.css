@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    overflow: hidden;
+}
+
+
+:root {
+    --yellow-color: #fcee09; 
+    --red-color: #ff003c;
+    --black-color: #050a0e;
+    --blue-color: #00f0ff;
+  }
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.left{
+    display: flex;
+    width: 100%;
+}
+
+img{
+    scale: 0.7;
+}
+
+.vid{
+    width: 600px;
+    height: 337px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn {
+    width: 230px;
+    height: 45px; 
+    border: 0;
+    outline: none;
+    background-color: var(--black-color);
+    cursor: pointer;
+    position: relative;
+    font-family: Tomorrow, sans-serif;
+    font-size: .85rem;
+    text-transform: uppercase;
+    color: white;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  }
+  
+  .btn:hover{
+      background-color: var(--black-color);
+      color: black;
+  }
+  
+  .btn__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: var(--black-color);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  }
+  
+  .btn__content:hover{
+      background-color: var(--yellow-color);
+  }
+
+.hori{
+    display: flex;
+    height: 80%;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-around;
+    gap: 0;
+    border: 5%;
+}
+
+.text{
+    margin-top: 2rem;
+    text-align: left;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.buynow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 60%;
+    height: 45px;
+    font-size: xx-large;
+    color: black;
+}
